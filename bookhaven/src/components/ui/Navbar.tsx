@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import {motion} from "framer-motion";
 import Link from 'next/link';
 import {Button} from "./ui/button";
@@ -14,6 +14,8 @@ const Navbar = () => {
         {name : "Contact" , href: "/contact"},
     ];
 
+    // Mobile Menu
+    const [mobileMenuOpen , setMobileMenuOpen] = useState(false);
   return (
     <>
     <motion.header
@@ -36,7 +38,7 @@ const Navbar = () => {
                 className='text-sm font-medium hover:text-primary tranistion-colors'>
                     {item.name}
                 </Link>
-            ))}
+            ))} 
          </nav>
 
          <div className='hidden md:flex items-center gap-4'>
@@ -44,6 +46,20 @@ const Navbar = () => {
              <Search className='h-4 w-4'/>
             </Button>
 
+            <Button variant="ghost" size="icon">
+             <ShoppingCart className='h-4 w-4'/>
+             <span className='sr-only'>Cart</span>
+            </Button>
+
+                {/* Mobile Menu Button */}
+            <Button 
+            variant="ghost" 
+            size="icon"
+            className='md:hidden'
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            
+             {mobileMenuOpen ? <X className='h-5 w-5'/> : <Menu className='h-4 w-4'/> }
+            </Button>
          </div>
         </div>
 
