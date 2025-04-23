@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { div, li } from "framer-motion/m";
 
 const footerLinks = [
   {
@@ -61,6 +62,27 @@ const Footer = () => {
               </Button>
               </div>
             </div>
+
+            {footerLinks.map((section)=> (
+              <div key={section.title} className="space-y-4">
+               <h4 className="font-medium">{section.title}</h4>
+               <ul className="space-y-2">
+                {section.links.map((link)=> (
+                  <li key={link.name}>
+                    <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+               </ul> 
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 pt-8 border-t text-sm text-muted-foreground text-center">
+            &copy; {new Date().getFullYear()} BookHaven. All rights reserved}
           </div>
         </div>
       </footer>
