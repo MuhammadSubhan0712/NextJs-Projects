@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import {Button} from '@/components/ui/button';
 import { Search, X, Menu, ShoppingCart } from "lucide-react";
 
 const Navbar = () => {
