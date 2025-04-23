@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: "Contact", href: "/contact" },
   ];
 
-  // Mobile Menu
+       // Mobile Menu
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>

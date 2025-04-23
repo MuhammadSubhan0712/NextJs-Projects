@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useForm } from "react-hook-form";
 import AnimatedText from "@/components/ui/AnimatedText";
+import "./globals.css";
 
 const Contact = () => {
   const { register, handleSubmit } = useForm();
@@ -112,4 +113,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contact

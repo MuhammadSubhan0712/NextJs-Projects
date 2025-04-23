@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { div, li } from "framer-motion/m";
+
 
 const footerLinks = [
   {
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
 
           <div className="mt-12 pt-8 border-t text-sm text-muted-foreground text-center">
-            &copy; {new Date().getFullYear()} BookHaven. All rights reserved}
+            &copy; {new Date().getFullYear()} BookHaven. All rights reserved
           </div>
         </div>
       </footer>

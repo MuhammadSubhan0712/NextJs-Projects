@@ -2,6 +2,7 @@ import AnimatedText from "@/components/ui/AnimatedText";
 import BookCard from "@/components/ui/BookCard";
 import Hero from "@/components/ui/Hero";
 import { books } from "@/lib/constants";
+import "./globals.css";
 import React from "react";
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
             <div className="text-center space-y-4">
               <AnimatedText
                 text="Featured Collection"
-                className="text-3xl md:text-4xl font-bold"
+                className="text-center text-3xl md:text-4xl font-bold"
               />
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Discover our handpicked selection of books for every reader
