@@ -1,5 +1,7 @@
-import AnimatedText from '@/components/ui/AnimatedText'
-import Hero from '@/components/ui/Hero'
+import AnimatedText from '@/components/ui/AnimatedText';
+import BookCard from '@/components/ui/BookCard';
+import Hero from '@/components/ui/Hero';
+import { books } from '@/lib/constants';
 import React from 'react'
 
 const Home = () => {
@@ -35,7 +37,16 @@ const Home = () => {
             ))}
           </div>
         </div>
-        </section>
+    </section>
+
+    {/* Newsletter Section */}
+    <section className='py-12 md:py-24'>
+      <div className="container">
+        <div  className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 md:p-12 lg:p-16">
+          
+        </div>
+      </div>
+    </section>
     </main>
     </>
   )
