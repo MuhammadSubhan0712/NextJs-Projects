@@ -1,5 +1,4 @@
 import AnimatedText from "@/components/ui/AnimatedText";
-import { div } from "framer-motion/m";
 import React from "react";
 
 const Services = () => {
@@ -7,7 +6,7 @@ const Services = () => {
     {
       title: "Personalized Recommendations",
       description:
-        "Get book recommendations tailored to your reading preferences.",
+      "Get book recommendations tailored to your reading preferences.",
       icon: "📚",
     },
     {
