@@ -61,6 +61,19 @@ const Navbar = () => {
              {mobileMenuOpen ? <X className='h-5 w-5'/> : <Menu className='h-4 w-4'/> }
             </Button>
          </div>
+         
+         {/* Mobile Menu */}
+         {mobileMenuOpen && (
+              <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden overflow-hidden"
+            >
+                
+            <motion.div/>
+         )}
+
         </div>
 
     </motion.header>
