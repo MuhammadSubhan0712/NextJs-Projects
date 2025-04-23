@@ -27,12 +27,19 @@ const AnimatedText = ({text, className,}: {text:string, className?: string}) => 
     },
     hidden: {
       opacity: 0,
+      y: 20,
       
-    }
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
   }
 
   return (
-    <div>AnimatedText</div>
+    <>
+    </>
   )
 }
 
