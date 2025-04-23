@@ -1,9 +1,22 @@
+"use client"
 import React from 'react'
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { useForm } from "react-hook-form";
 
-const page = () => {
+const Contact = () => {
+  
+  const { register, handleSubmit } = useForm();
+
+  
+
+
   return (
-    <div>page</div>
+    <>
+    
+    </>
   )
 }
 
-export default page
+export default Contact
