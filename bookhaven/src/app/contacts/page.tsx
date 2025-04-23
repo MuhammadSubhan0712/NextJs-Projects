@@ -83,6 +83,18 @@ const Contact = () => {
           className="w-full px-4 py-2 rounded-md border bg-background text-sm"
           />
          </div>
+
+         <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-medium">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  {...register("message")}
+                  className="w-full px-4 py-2 rounded-md border bg-background text-sm"
+                />
+              </div>
         </motion.form>
       </section>
     </main>
