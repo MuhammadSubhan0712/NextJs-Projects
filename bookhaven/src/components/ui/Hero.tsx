@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import {Button} from '@/components/ui/button';
-import { ArrowBigRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -37,10 +37,18 @@ const Hero = () => {
            transition={{ duration: 0.5, delay: 0.4 }}
            className="flex gap-4">
           
-          </motion.div>
-          
+          <Button size="lg">
+           Browse Collection
+           <ArrowRight className='ml-2 h-4 w-4'/>
+          </Button>
 
-            </div>
+          <Button variant="outline" size="lg">
+           Learn More
+          </Button>
+          </motion.div>
+        </div>
+
+        {/* For Image */}
         </div>
     </section>
     </>
