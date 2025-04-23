@@ -1,19 +1,24 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
-
-const AnimatedText = ({text, className,}: {text:string, className?: string}) => {
-  const words = text.split("  ")
+const AnimatedText = ({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string;
+}) => {
+  const words = text.split("  ");
 
   const container = {
-    hidden: {opacity: 0},
-    visible: ( i = 1) => ({
+    hidden: { opacity: 0 },
+    visible: (i = 1) => ({
       opacity: 1,
       transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
     }),
-  }
+  };
 
   const child = {
     visible: {
@@ -28,19 +33,34 @@ const AnimatedText = ({text, className,}: {text:string, className?: string}) => 
     hidden: {
       opacity: 0,
       y: 20,
-      
+
       transition: {
         type: "spring",
         damping: 12,
         stiffness: 100,
       },
     },
-  }
+  };
 
   return (
     <>
+      <motion.div
+        style={{ display: "flex", overflow: "hidden" }}
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className={`flex flex-wrap ${className}`}>
+        {words.map((word, index) => (
+          <motion.span
+            key={index}
+            variants={child}
+            style={{ marginRight: "5px" }}>
+            {word}
+          </motion.span>
+        ))}
+      </motion.div>
     </>
-  )
-}
+  );
+};
 
-export default AnimatedText
+export default AnimatedText;
