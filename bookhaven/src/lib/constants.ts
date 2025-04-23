@@ -1,0 +1,58 @@
+export const books = [
+    {
+      title: "The Midnight Library",
+      author: "Matt Haig",
+      price: 14.99,
+      rating: 4,
+      coverImage: "📖",
+    },
+    {
+      title: "Project Hail Mary",
+      author: "Andy Weir",
+      price: 18.99,
+      rating: 5,
+      coverImage: "🚀",
+    },
+    {
+      title: "Where the Crawdads Sing",
+      author: "Delia Owens",
+      price: 12.99,
+      rating: 4,
+      coverImage: "🌿",
+    },
+    {
+      title: "Atomic Habits",
+      author: "James Clear",
+      price: 16.99,
+      rating: 5,
+      coverImage: "⚛️",
+    },
+    {
+      title: "The Silent Patient",
+      author: "Alex Michaelides",
+      price: 13.99,
+      rating: 4,
+      coverImage: "🤫",
+    },
+    {
+      title: "Educated",
+      author: "Tara Westover",
+      price: 15.99,
+      rating: 5,
+      coverImage: "🎓",
+    },
+    {
+      title: "Dune",
+      author: "Frank Herbert",
+      price: 17.99,
+      rating: 5,
+      coverImage: "🏜️",
+    },
+    {
+      title: "The Vanishing Half",
+      author: "Brit Bennett",
+      price: 14.99,
+      rating: 4,
+      coverImage: "👯",
+    },
+  ]
