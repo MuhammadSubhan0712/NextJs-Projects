@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const AnimatedText = ({
@@ -10,6 +10,16 @@ const AnimatedText = ({
   text: string;
   className?: string;
 }) => {
+  const [mounted , setMounted] = useState(false);
+
+  useEffect(()=>{
+    setMounted(true);
+  },[]);
+
+  if (!mounted) {
+    return <div className={className}>{text}</div>
+  }
+
   const words = text.split("  ");
 
   const container = {
