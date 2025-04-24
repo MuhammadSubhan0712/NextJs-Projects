@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Search, X, Menu, ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 import gif1 from "../../app/gif1.gif";
-import gif2 from "../../app/gif2.gif";
+import gif from "../../app/gif.gif";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -34,12 +34,12 @@ const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           {/* For Gif of book */}
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 relative">
+            <div className="w-12 h-auto relative">
               <Image
-                src={gif1}
+                src={gif}
                 alt="BookHaven Logo"
-                width={40}
-                height={40}
+                width={50}
+                height={50}
                 className="object-contain rounded"
                 unoptimized // Required for GIF animations
               />
@@ -57,8 +57,9 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-amber-800 hover:text-amber-400 hover:underline transition-colors duration-200">
+                className="text-sm font-mediumtext-amber-800 hover:text-amber-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out px-2 py-1 rounded-md hover:bg-amber-50 relative group">
                 {item.name}
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
               </Link>
             ))}
           </nav>
@@ -106,7 +107,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-sm text-amber-800 hover:text-amber-600"
+                className="block py-2 text-sm text-amber-800 hover:text-amber-400"
                 onClick={() => setMobileMenuOpen(false)}>
                 {item.name}
               </Link>
