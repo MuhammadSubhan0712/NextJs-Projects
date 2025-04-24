@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Star, ShoppingCart } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface BookCardProps {
   title: string;
   author: string;
   price: number;
   rating: number;
-  coverImage: string;
+  coverImage: string | StaticImageData;
 }
 
 const BookCard = ({
@@ -22,10 +22,10 @@ const BookCard = ({
 }: BookCardProps) => {
   
   const [isClient, setIsClient] = useState(false);
-  const isValidImage = coverImage &&
-    (coverImage.startsWith('/') ||
-      coverImage.startsWith('http') ||
-      coverImage.startsWith('data:'));
+  // const isValidImage = coverImage &&
+  //   (coverImage.startsWith('/') ||
+  //     coverImage.startsWith('http') ||
+  //     coverImage.startsWith('data:'));
 
   useEffect(() => {
     setIsClient(true);
@@ -35,7 +35,6 @@ const BookCard = ({
     return (
       <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         <div className="relative aspect-[2/3] bg-muted flex items-center justify-center">
-          {isValidImage ? (
             <Image
               src={coverImage}
               alt={`${title} cover`}
@@ -51,11 +50,7 @@ const BookCard = ({
                 target.remove();
               }}
             />
-          ) : (
-            <div className="w-full h-full bg-amber-100 flex items-center justify-center">
-              <span className="text-5xl">📚</span>
-            </div>
-          )}
+      
         </div>
 
         <div className="p-4 space-y-2">
@@ -94,7 +89,6 @@ const BookCard = ({
         whileHover={{ y: -5 }}
         className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
        <div className="relative aspect-[2/3] bg-muted flex items-center justify-center">
-          {isValidImage ? (
             <Image
               src={coverImage}
               alt={`${title} cover`}
@@ -109,12 +103,7 @@ const BookCard = ({
                 target.parentElement!.className = "relative aspect-[2/3] bg-amber-100 flex items-center justify-center";
                 target.remove();
               }}
-            />
-          ) : (
-            <div className="w-full h-full bg-amber-100 flex items-center justify-center">
-              <span className="text-5xl">📚</span>
-            </div>
-          )}
+            /> 
         </div>
 
         <div className="p-4 space-y-2">

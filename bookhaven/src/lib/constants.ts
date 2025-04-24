@@ -1,11 +1,11 @@
-import coverimage1 from "../app/coverimage1.jpg";
+import coverimage1 from "../app/midnight-lib.jpg";
 import coverimage2 from "../app/coverimage2.jpg";
 import coverimage3 from "../app/coverimage3.jpg";
-import coverimage4 from "../app/coverimage4.jpg";
-import coverimage5 from "../app/coverimage5.jpg";
+import coverimage4 from "../app/atomic-habits.jpg";
+import coverimage5 from "../app/silent-patient.jpg";
 import coverimage6 from "../app/coverimage6.jpg";
-import coverimage7 from "../app/coverimage7.jpg";
-import coverimage8 from "../app/coverimage8.jpg";
+import coverimage7 from "../app/dune.jpg";
+import coverimage8 from "../app/vanishing-half.jpg";
 
 
 export const books = [
