@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Search, X, Menu, ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
-import gif1 from "../../app/gif1.gif";
 import gif from "../../app/gif.gif";
 import Image from "next/image";
 
