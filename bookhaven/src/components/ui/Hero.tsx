@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Hero_img from "../../app/Hero.jpg";
 
 const Hero = () => {
   return (
@@ -53,7 +55,13 @@ const Hero = () => {
             className="lg:w-1/2">
             <div className="relative aspect-square w-full rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-8xl font-bold opacity-10">📚</div>
+                <Image
+                  src={Hero_img}
+                  alt="BookHaven - Discover your next read"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </motion.div>

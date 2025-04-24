@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Star, ShoppingCart } from "lucide-react";
-import { div } from "framer-motion/client";
+import Image from "next/image";
 
 interface BookCardProps {
   title: string;
@@ -20,56 +20,42 @@ const BookCard = ({
   rating,
   coverImage,
 }: BookCardProps) => {
+  
+  const [isClient, setIsClient] = useState(false);
+  const isValidImage = coverImage &&
+    (coverImage.startsWith('/') ||
+      coverImage.startsWith('http') ||
+      coverImage.startsWith('data:'));
 
-  const [isClient , setIsClient] = useState(false);
-
-  useEffect(()=>{
+  useEffect(() => {
     setIsClient(true);
-  },[]);
+  }, []);
 
   if (!isClient) {
     return (
-      <div className="border rounded-lg overflow-hidden shadow-sm hovre:shadow-md transition-shadow">
-        <div className="absolute inset-0 flex items-center justify-center text-5xl">
-            {coverImage}
-          </div>
-          
-          <div className="p-4 space-y-2">
-          <h3 className="font-medium">{title}</h3>
-          <p className="text-sm text-muted-foreground">{author}</p>
-          <div className="flex items-center gap-1">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className={`h-4 w-4 ${
-                  i < rating
-                    ? "fill-primary text-primary"
-                    : "text-muted-foreground"
-                }`}
-              />
-            ))}
-          </div>
-
-          <div className="flex items-center justify-between pt-2">
-            <span className="font-bold">${price.toFixed(2)}</span>
-            <Button variant="outline" size="sm">
-              <ShoppingCart className="h-4 w-4 mr-2" />
-              Add
-            </Button>
-          </div>
-        </div>
-      </div>
-    )
-  }
-  return (
-    <>
-      <motion.div
-        whileHover={{ y: -5 }}
-        className="border rounded-lg overflow-hidden shadow-sm hovre:shadow-md transition-shadow">
-        <div className="aspect-[2/3] bg-muted relative">
-          <div className="absolute inset-0 flex items-center justify-center text-5xl">
-            {coverImage}
-          </div>
+      <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div className="relative aspect-[2/3] bg-muted flex items-center justify-center">
+          {isValidImage ? (
+            <Image
+              src={coverImage}
+              alt={`${title} cover`}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              priority={false}
+              onError={(e) => {
+                //  If image gets failed to load:
+                const target = e.target as HTMLImageElement;
+                target.onerror = null;
+                target.parentElement!.className = "relative aspect-[2/3] bg-amber-100 flex items-center justify-center";
+                target.remove();
+              }}
+            />
+          ) : (
+            <div className="w-full h-full bg-amber-100 flex items-center justify-center">
+              <span className="text-5xl">📚</span>
+            </div>
+          )}
         </div>
 
         <div className="p-4 space-y-2">
@@ -81,16 +67,79 @@ const BookCard = ({
                 key={i}
                 className={`h-4 w-4 ${
                   i < rating
-                    ? "fill-primary text-primary"
-                    : "text-muted-foreground"
+                    ? "fill-amber-500 text-amber-500" : "text-amber-200"
                 }`}
               />
             ))}
+              <span className="text-xs text-amber-800/60 ml-1">({rating})</span>
           </div>
 
-          <div className="flex items-center justify-between pt-2">
-            <span className="font-bold">${price.toFixed(2)}</span>
-            <Button variant="outline" size="sm">
+          <div className="flex items-center justify-between pt-2 border-t border-amber-100">
+            <span className="font-bold text-amber-900">${price.toFixed(2)}</span>
+            <Button 
+            variant="outline" 
+            size="sm"
+            className="text-amber-900 border-amber-300 hover:bg-amber-50">
+              <ShoppingCart className="h-4 w-4 mr-2" />
+              Add
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <>
+      <motion.div
+        whileHover={{ y: -5 }}
+        className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+       <div className="relative aspect-[2/3] bg-muted flex items-center justify-center">
+          {isValidImage ? (
+            <Image
+              src={coverImage}
+              alt={`${title} cover`}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              priority={false}
+              onError={(e) => {
+                //  If image gets failed to load:
+                const target = e.target as HTMLImageElement;
+                target.onerror = null;
+                target.parentElement!.className = "relative aspect-[2/3] bg-amber-100 flex items-center justify-center";
+                target.remove();
+              }}
+            />
+          ) : (
+            <div className="w-full h-full bg-amber-100 flex items-center justify-center">
+              <span className="text-5xl">📚</span>
+            </div>
+          )}
+        </div>
+
+        <div className="p-4 space-y-2">
+          <h3 className="font-medium">{title}</h3>
+          <p className="text-sm text-muted-foreground">{author}</p>
+          <div className="flex items-center gap-1">
+            {[...Array(5)].map((_, i) => (
+              <Star
+                key={i}
+                className={`h-4 w-4 ${
+                  i < rating
+                     ? "fill-amber-500 text-amber-500" : "text-amber-200"
+                }`}
+              />
+            ))}
+            <span className="text-xs text-amber-800/60 ml-1">({rating})</span>
+          </div>
+
+          <div className="flex items-center justify-between pt-2 border-t border-amber-100">
+            <span className="font-bold text-amber-900">${price.toFixed(2)}</span>
+            <Button 
+            variant="outline" 
+            size="sm"
+            className="text-amber-900 border-amber-300 hover:bg-amber-50">
+
               <ShoppingCart className="h-4 w-4 mr-2" />
               Add
             </Button>

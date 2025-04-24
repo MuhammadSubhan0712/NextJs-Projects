@@ -18,7 +18,7 @@ const Home = () => {
             <div className="text-center space-y-4">
               <AnimatedText
                 text="Featured Collection"
-                className="text-center text-3xl md:text-4xl font-bold"
+                className="flex justify-center items-center text-3xl md:text-4xl font-bold"
               />
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Discover our handpicked selection of books for every reader
@@ -26,7 +26,7 @@ const Home = () => {
             </div>
 
             {/* Books Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 sm:px-6 lg:px-8">
               {books.map((book, index) => (
                 <BookCard
                   key={index}
@@ -48,7 +48,7 @@ const Home = () => {
               <div className="max-w-3xl mx-auto text-center space-y-6">
                 <AnimatedText
                   text="Join Our Reading Community"
-                  className="text-2xl md:text-3xl font-bold"
+                  className="flex justify-center items-center text-2xl md:text-3xl font-bold"
                 />
                 <p className="text-muted-foreground">
                   Sign up for our newsletter and get 10% off of your first
@@ -71,8 +71,8 @@ const Home = () => {
         </section>
 
         {/* Testimonials (Optional) */}
-        <section className="py-12 md:py-24 bg-background">
-          <div className="container max-w-4xl">
+        <section className="py-12 md:py-24 bg-background flex justify-center items-center">
+          <div className="container max-w-4xl ">
             <h2 className="text-3xl font-bold text-center mb-12">
               What Readers Say
             </h2>
