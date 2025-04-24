@@ -21,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={inter.className}>
+        className={`${inter.className} bg-amber-50 text-amber-900 min-h-screen flex flex-col`}>
         <Navbar/>
-        {children}
+        <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {children}
+        </main>
         <Footer/>
       </body>
     </html>
