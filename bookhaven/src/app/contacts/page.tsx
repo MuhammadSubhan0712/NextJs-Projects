@@ -3,14 +3,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import AnimatedText from "@/components/ui/AnimatedText";
 
 
-const Contact = () => {
-  const { register, handleSubmit } = useForm();
+interface FormValues {
+  name: string;
+  email: string;
+  message: string;
+}
 
-  const onSubmit = (data: string | HTMLFormElement) => {
+
+const Contact = () => {
+  const { register, handleSubmit } = useForm<FormValues>();
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
   };
 
