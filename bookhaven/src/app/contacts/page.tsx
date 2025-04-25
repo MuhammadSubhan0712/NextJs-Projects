@@ -10,7 +10,7 @@ import AnimatedText from "@/components/ui/AnimatedText";
 const Contact = () => {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: string | HTMLFormElement) => {
     console.log(data);
   };
 
