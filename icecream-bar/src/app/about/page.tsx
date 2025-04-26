@@ -36,6 +36,15 @@ const About = () => {
           className="text-4xl md:text-5xl font-bold text-white mb-4">
           Our Story
           </motion.h1>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xl text-white max-w-2xl mx-auto"
+          >
+            From a small family recipe to bringing joy to thousands
+          </motion.p>
         </div>
         </div>
       </section>
