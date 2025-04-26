@@ -52,7 +52,26 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
+
+        {/* Mobile Menu Button */}
+        <button className="md:hidden text-gray-700 focus:oultine-none"
+        onClick={()=> setIsOpen(!isOpen)}>
+         {isOpen ? <X size={24}/> : <Menu size={24}/>}
+        </button>
       </div>
+
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: 'auto' }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.3 }}
+        className='md:hidden bg-white'>
+
+          <div className="container mx-auto px-4 py-2 flex flex-col"></div>
+        </motion.div>
+      )}
      </motion.nav>
     </>
   )
