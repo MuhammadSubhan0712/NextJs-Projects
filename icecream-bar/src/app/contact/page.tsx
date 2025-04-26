@@ -9,18 +9,21 @@ const locations = [
     name: "Downtown",
     address: "123 Ice Cream Ave, Suite 100",
     phone: "(555) 123-4567",
+    email: "downtown@gmail.com",
     hours: "Mon-Sun: 12pm - 10pm",
   },
   {
     name: "Uptown",
     address: "456 Sweet Street, Corner of 5th",
     phone: "(555) 987-6543",
+    email: "uptown@gmail.com",
     hours: "Mon-Sun: 1pm - 11pm",
   },
   {
     name: "Westside",
     address: "789 Cone Boulevard",
     phone: "(555) 456-7890",
+    email: "westside@gmail.com",
     hours: "Mon-Sun: 11am - 9pm",
   },
 ];
@@ -76,6 +79,11 @@ const Contact = () => {
                     <div className="flex items-start">
                       <Phone className="w-5 h-5 mt-1 mr-3 text-pink-500" />
                       <p className="text-gray-700">{location.phone}</p>
+                    </div>
+
+                    <div className="flex items-start">
+                      <Mail className="w-5 h-5 mt-1 mr-3 text-pink-500" />
+                      <p className="text-gray-700">{location.email}</p>
                     </div>
 
                     <div className="flex items-start">
