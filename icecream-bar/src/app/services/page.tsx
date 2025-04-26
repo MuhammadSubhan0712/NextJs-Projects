@@ -1,6 +1,7 @@
 "use client";
 import React from 'react'
 import { motion } from 'framer-motion'
+import FlavourCard from '@/components/FlavourCard';
 
 const allFlavors = [
   {
@@ -69,6 +70,35 @@ const Services = () => {
           Discover our wide range of artisanal ice cream flavors
           </p>
         </div>
+        </div>
+      </section>
+
+      {/* Dashing Flavors */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+          Classic Flavors
+         </h2>
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {allFlavors.map((flavor, index) => (
+            <FlavourCard
+            key={flavor.name}
+            name={flavor.name}
+            description={flavor.description}
+            color={flavor.color}
+            image={flavor.image}
+            delay={ index * 0.1 }/>
+          ))}
+         </div>
+        </div>
+      </section>
+
+      {/* Seasonal Flavors */}
+      <section className='py-16 bg-pink-50'>
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+            
+          </h2>
         </div>
       </section>
 
