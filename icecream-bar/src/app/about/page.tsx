@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-
+import Image from 'next/image'
 const teamMembers = [
   {
     name: "Sarah Johnson",
@@ -130,7 +130,13 @@ const About = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                
+                 
+                 <div className="h-64 bg-gray-200 overflow-hidden">
+                  <Image 
+                  src={member.image}
+                  alt={member.name}
+                  className='w-full h-full object-cover'/>
+                 </div>
                 </motion.div>
               ))}
             </div>
