@@ -27,7 +27,25 @@ const locations = [
 
 const Contact = () => {
   return (
-    
+    <>
+    <main>
+      {/* Hero */}
+      <section className='relative h-96 bg-gradient-to-r from-pink-500 to-yellow-500 flex items-center justify-center text-center'>
+      <div className="absolute inset-0 bg-[url('/images/contact.jpg')] bg-cover bg-center opacity-30">
+      <div className="relative z-10 px-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          Contact Us
+        </h1>
+        <p className="text-xl text-white max-w-2xl mx-auto">
+        We would love to hear from you! Visit us or send us a message.
+        </p>
+      </div>
+      </div>
+      </section>
+
+      {/* Location */}
+    </main>
+    </>
   )
 }
 
