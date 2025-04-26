@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter } from "lucide-react";
-import { li } from "framer-motion/client";
+
 
 const footerLinks = [
   { name: "About Us", href: "/about" },
