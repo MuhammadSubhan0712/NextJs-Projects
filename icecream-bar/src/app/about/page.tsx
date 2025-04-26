@@ -27,7 +27,7 @@ const About = () => {
     <main>
 
       <section className="relative h-96 bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center text-center">
-        <div className="absolute inset-0 bg-[url('/images/about.jpg')] bg-cover bg-center opacity-30">
+        <div className="absolute inset-0 bg-[url('/images/about.jpg')] bg-cover bg-center opacity-30" />
         <div className="relative z-10 px-4">
           <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -46,6 +46,65 @@ const About = () => {
             From a small family recipe to bringing joy to thousands
           </motion.p>
         </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-center text-gray-800 mb-12"
+            >
+              How It All Began
+            </motion.h2>
+            
+            <div className="space-y-8">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-pink-50 p-6 rounded-lg"
+              >
+                <h3 className="text-xl font-semibold text-pink-600 mb-2">2015 - The First Scoop</h3>
+                <p className="text-gray-700">
+                  What started as a summer experiment in Sarah's kitchen turned into a neighborhood sensation. 
+                  Her vanilla bean ice cream with a hint of lavender became the talk of the town.
+                </p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-blue-50 p-6 rounded-lg"
+              >
+                <h3 className="text-xl font-semibold text-blue-600 mb-2">2018 - First Shop</h3>
+                <p className="text-gray-700">
+                  With demand growing, we opened our first small shop downtown. The line stretched around 
+                  the block on opening day, and we knew we were onto something special.
+                </p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-yellow-50 p-6 rounded-lg"
+              >
+                <h3 className="text-xl font-semibold text-yellow-600 mb-2">2023 - Scoop Happiness</h3>
+                <p className="text-gray-700">
+                  Today, we operate three locations and ship nationwide. But we still make every batch 
+                  with the same care and attention as that first summer in Sarah's kitchen.
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
