@@ -90,7 +90,67 @@ const Contact = () => {
       </section>
 
       {/* Contact Form */}
-      
+      <section className="py-16 bg-pink-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-xl shadow-lg p-8 md:p-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              Send Us a Message
+            </h2>
+            <form className='space-y-6'>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                  />
+                </div>
+
+                <div>
+                <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                  /> 
+                </div>
+                </div>
+
+                <div>
+                <label htmlFor="subject" className="block text-gray-700 mb-2">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-gray-700 mb-2">Message</label>
+                <textarea
+                  id="message"
+                  rows={5}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                ></textarea>
+              </div>
+
+              <motion.button
+               whileHover={{ scale: 1.02 }}
+               whileTap={{ scale: 0.98 }}
+               type="submit"
+               className="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors">
+                Send Message
+              </motion.button>
+            </form>
+          </motion.div>
+        </div>
+      </section>
     </main>
     </>
   )
