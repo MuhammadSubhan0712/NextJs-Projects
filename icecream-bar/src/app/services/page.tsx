@@ -97,10 +97,23 @@ const Services = () => {
       <section className='py-16 bg-pink-50'>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-            
+            Seasonal Specials
           </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {seasonalFlavors.map((flavor, index) => (
+              <FlavourCard
+              key={flavor.name}
+              name={flavor.name}
+              description={flavor.description}
+              color={flavor.color}
+              image={flavor.image}
+              delay={ index * 0.1 }/>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* Custom Orders */}
 
     </main>
     </>
