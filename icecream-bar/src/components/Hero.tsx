@@ -1,5 +1,6 @@
 import React from 'react'
 import {motion} from "framer-motion";
+import IceCreamAnimation from './IceCreamAnimation';
 const Hero = () => {
   return (
     <>
@@ -18,8 +19,27 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           className="text-6xl font-bold text-pink-600 mb-6">
-
+           Scoop Happiness
           </motion.h1>
+
+          <motion.p 
+           initial={{ y: 50, opacity: 0 }}
+           animate={{ y: 0, opacity: 1 }}
+           transition={{ duration: 0.8, delay: 0.2 }}
+           className="text-xl text-gray-700 mb-8 max-w-2xl text-center">
+           Artisanal ice cream crafted with love and the finest ingredients  
+          </motion.p>
+
+          {/* Custom ice cream animation Component */}
+          <IceCreamAnimation/>
+
+
+          <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className='bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px=8 rounded-full shadow-lg mt-8'>
+            Order Now
+          </motion.button>
         </div>
     </section>
     </>
