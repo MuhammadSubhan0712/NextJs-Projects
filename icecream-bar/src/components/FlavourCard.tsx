@@ -7,7 +7,7 @@ interface FlavorCardProps {
   name: string;
   description: string;
   color: string;
-  image: string;
+  image: string | HTMLImageElement;
   delay?: number;
 }
 

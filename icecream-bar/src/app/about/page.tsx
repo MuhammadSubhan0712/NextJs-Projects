@@ -1,8 +1,9 @@
-"use client";
+"use client"
 
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
 const teamMembers = [
   {
     name: "Sarah Johnson",
@@ -23,6 +24,7 @@ const teamMembers = [
     image: "/images/team/emma.jpg",
   },
 ];
+
 const About = () => {
   return (
     <>
@@ -140,6 +142,8 @@ const About = () => {
                       src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover"
+                      width={100}
+                      height={100}
                     />
                   </div>
 

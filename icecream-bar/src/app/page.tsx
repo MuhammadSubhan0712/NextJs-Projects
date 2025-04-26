@@ -1,27 +1,34 @@
+"use client";
+
 import { motion } from "framer-motion";
 import FlavourCard from "@/components/FlavourCard";
 import Hero from "@/components/Hero";
 import Image from "next/image";
 import React from "react";
+import ourIcecream from "../../public/images/chocolate-euphoria.jpg";
+import velvet_vanilla from "../../public/images/velvet-vanilla.jpg";
+import chocolate_euphoria from "../../public/images/chocolate-euphoria.jpg";
+import berry_bliss from "../../public/images/berry-bliss.jpg";
+
 
 const featuredFlavors = [
   {
     name: "Velvet Vanilla",
     description: "Creamy Madagascar vanilla with a hint of bourbon",
     color: "bg-amber-300",
-    image: "/images/flavors/vanilla.png",
+    image: {velvet_vanilla},
   },
   {
     name: "Chocolate Euphoria",
     description: "Rich Belgian chocolate with cocoa nibs",
     color: "bg-amber-800",
-    image: "/images/flavors/chocolate.png",
+    image: {chocolate_euphoria},
   },
   {
     name: "Berry Bliss",
     description: "Mixed berries with a swirl of raspberry coulis",
     color: "bg-pink-400",
-    image: "/images/flavors/strawberry.png",
+    image: {berry_bliss},
   },
 ];
 
@@ -64,9 +71,11 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="md:w-1/2">
                 <Image
-                  src="/images/about.jpg"
+                  src={ourIcecream}
                   alt="Our ice cream"
                   className="rounded-xl shadow-lg w-full"
+                  // width={1000}
+                  // height={100}
                 />
               </motion.div>
 
