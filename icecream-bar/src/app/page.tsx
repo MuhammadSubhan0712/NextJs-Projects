@@ -58,39 +58,51 @@ const Home = () => {
             Our Signature <span className="text-pink-600">Flavors</span>
             </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {featuredFlavors.map((flavor, index) => (
-                <FlavourCard
-                  key={flavor.name}
-                  name={flavor.name}
-                  description={flavor.description}
-                  color={flavor.color}
-                  image={flavor.image}
-                  delay={index * 0.1}
-                />
+                <motion.div
+                key={flavor.name}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}>
+
+                <FlavourCard {...flavor}/>
+
+                </motion.div>
+                
               ))}
             </div>
           </div>
         </section>
 
+        {/* Video Section */}
+        <VideoSection/>
+
         {/* About Section */}
-        <section className="py-16 bg-pink-50">
+        <section className="py-20 bg-gradient-to-r from-pink-50 to-blue-50 relative overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="md:w-1/2">
-                <Image
-                  src={ourIcecream}
-                  alt="Our ice cream"
-                  className="rounded-xl shadow-lg w-full"
-                  width={600}
-                  height={500}
-                />
+                className="lg:w-1/2 relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <video 
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto rounded-2xl"
+                  >
+                    <source src="/videos/icecream.making.mp4"/>
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  </div>
               </motion.div>
+
 
               <div className="md:w-1/2">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
