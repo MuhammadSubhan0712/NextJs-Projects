@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useRef } from "react";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useAnimations, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useAnimation } from "framer-motion";
+
 
 const IcecreamModel = ({
   position = [0, 0, 0],
@@ -12,7 +12,7 @@ const IcecreamModel = ({
 }) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/models/icecream.glb");
-  const { actions } = useAnimation(animations, group);
+  const { actions } = useAnimations(animations, group);
 
   // Animation Loop:
   useFrame((state) => {
@@ -42,7 +42,7 @@ const IcecreamModel = ({
       <group ref={group} position={position} scale={scale} dispose={null}>
         <mesh
           geometry={nodes.icecream.geometry}
-          material={nodes.icecream.matreial}
+          material={nodes.icecream.material}
           material-color={materialColor}
         />
 
