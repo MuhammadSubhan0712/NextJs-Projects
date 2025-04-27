@@ -7,37 +7,37 @@ const allFlavors = [
     name: "Velvet Vanilla",
     description: "Creamy Madagascar vanilla with a hint of bourbon",
     color: "bg-amber-300",
-    image: "/images/flavors/vanilla.png",
+    image: "/images/velvet-vanilla.jpg",
   },
   {
     name: "Chocolate Euphoria",
     description: "Rich Belgian chocolate with cocoa nibs",
     color: "bg-amber-800",
-    image: "/images/flavors/chocolate.png",
+    image: "/images/chocolate-euphoria.jpg",
   },
   {
     name: "Berry Bliss",
     description: "Mixed berries with a swirl of raspberry coulis",
     color: "bg-pink-400",
-    image: "/images/flavors/strawberry.png",
+    image: "/images/berry-bliss.jpg",
   },
   {
     name: "Mint Chocolate Chip",
     description: "Cool peppermint with dark chocolate chunks",
     color: "bg-green-300",
-    image: "/images/flavors/mint.png",
+    image: "/images/mint-chocolate.jpg",
   },
   {
     name: "Salted Caramel",
     description: "Buttery caramel with a touch of sea salt",
     color: "bg-amber-500",
-    image: "/images/flavors/caramel.png",
+    image: "/images/salted-caramel.jpg",
   },
   {
     name: "Cookies & Cream",
     description: "Vanilla ice cream packed with chocolate cookies",
     color: "bg-gray-400",
-    image: "/images/flavors/cookies.png",
+    image: "/images/cookies&cream.jpg",
   },
 ];
 const seasonalFlavors = [
@@ -45,13 +45,19 @@ const seasonalFlavors = [
     name: "Pumpkin Spice",
     description: "Seasonal favorite with cinnamon, nutmeg and pumpkin",
     color: "bg-orange-400",
-    image: "/images/flavors/pumpkin.png",
+    image: "/images/pumpkin-spice.jpg",
   },
   {
     name: "Peppermint Bark",
     description: "Holiday special with peppermint and white chocolate",
-    color: "bg-red-300",
-    image: "/images/flavors/peppermint.png",
+    color: "bg-red-400",
+    image: "/images/peppermint-bark.jpg",
+  },
+  {
+    name: "Blueberry Special",
+    description: "Holiday special with blueberry flavor",
+    color: "bg-purple-600",
+    image: "/images/blueberry.jpg",
   },
 ];
 
@@ -60,10 +66,10 @@ const Services = () => {
     <>
       <main>
         {/* Hero */}
-        <section className="relative h-96 bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-center">
-          <div className="absolute inset-0 bg-[url('/images/flavors/hero.png')] bg-cover bg-center opacity-30">
-            <div className="relative z-10 px-4">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <section className="relative h-96 bg-gradient-to-r from-pink-100 to-blue-100 flex items-center justify-center text-center">
+          <div className="absolute inset-0 bg-[url('/images/flavors-hero3.jpg')] bg-cover bg-center opacity-50">
+            <div className="relative mt-25 z-10 px-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                 Our Flavors
               </h1>
               <p className="text-xl text-white max-w-2xl mx-auto">
@@ -79,7 +85,7 @@ const Services = () => {
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
               Classic Flavors
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-auto h-full">
               {allFlavors.map((flavor, index) => (
                 <FlavourCard
                   key={flavor.name}
@@ -100,7 +106,7 @@ const Services = () => {
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
               Seasonal Specials
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
               {seasonalFlavors.map((flavor, index) => (
                 <FlavourCard
                   key={flavor.name}
