@@ -47,7 +47,16 @@ const VideoSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center px-4 max-w-4xl mx-auto"
         >
-          
+          <motion.h2
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            variants={{
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 20 }
+            }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            Premium Ingredients
+          </motion.h2>  
        </motion.div>
       </div>
 
