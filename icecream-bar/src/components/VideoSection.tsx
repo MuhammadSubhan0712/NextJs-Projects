@@ -35,7 +35,21 @@ const VideoSection = () => {
         </video>
       </div>
 
-      
+      {/* Content Overlay */}
+      <div className="absolute inset-0 z-10 bg-black/30 flex items-center justify-center">
+      <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 50 }
+          }}
+          transition={{ duration: 0.8 }}
+          className="text-center px-4 max-w-4xl mx-auto"
+        >
+          
+       </motion.div>
+      </div>
 
     </section>
     </>
