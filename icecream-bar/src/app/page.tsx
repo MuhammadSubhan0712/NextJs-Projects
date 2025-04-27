@@ -93,7 +93,7 @@ const Home = () => {
                     muted
                     playsInline
                     className="w-full h-auto rounded-2xl">
-                    <source src="/videos/icecream.making.mp4" />
+                    <source src="/videos/handcrafted.mp4" />
                   </video>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>

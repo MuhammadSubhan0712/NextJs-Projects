@@ -8,7 +8,7 @@ import { useInView } from "react-intersection-observer";
 import IceCreamAnimation from "./IceCreamAnimation";
 import dynamic from "next/dynamic";
 
-const IceCreamModel = dynamic(() => import("./IcecreamModel"), { ssr: false });
+// const IceCreamModel = dynamic(() => import("./IcecreamModel"), { ssr: false });
 
 const Hero = () => {
   const [ref, inView] = useInView({
@@ -20,7 +20,7 @@ const Hero = () => {
     <>
       <section
         ref={ref}
-        className="relative py-20 bg-gradient-to-b from-pink-50 to-blue-50 overflow-hidden">
+        className="relative py-50 bg-gradient-to-b from-pink-50 to-blue-50 overflow-hidden">
         {/* Video hd Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video
@@ -28,13 +28,13 @@ const Hero = () => {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover opacity-20">
-            <source src="videos/ice-cream-background.mp4" type="video/mp4" />
+            className="w-full h-full object-cover object-center opacity-50">
+            <source src="videos/background.mp4" type="video/mp4" />
           </video>
         </div>
 
         {/* Floating 3D Icecream models */}
-        <div className="absolute inset-0 z-10 pointer-events-none">
+        {/* <div className="absolute inset-0 z-10 pointer-events-none">
           <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
             <ambientLight intensity={0.5} />
             <pointLight position={[10, 10, 10]} />
@@ -48,7 +48,7 @@ const Hero = () => {
             )}
             <Environment preset="city" />
           </Canvas>
-        </div>
+        </div> */}
 
         {/* For Animated Background */}
         <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
@@ -111,7 +111,7 @@ const Hero = () => {
               repeat: Infinity,
               duration: 2,
             }}
-            className="absolute bottom-8  left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+            className="absolute bottom-[-160] left-1/2 transform -translate-x-1/2 flex flex-col items-center">
             <span className="text-gray-600 mb-2">Scroll down</span>
             <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
               <motion.div

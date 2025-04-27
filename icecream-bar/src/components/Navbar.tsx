@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { X, Menu } from "lucide-react";
+import Image from "next/image";
+import gif from "../../public/images/navbar.gif";
 
 interface NavItems {
   name: string;
@@ -29,11 +31,14 @@ const Navbar = () => {
         className="sticky top-0 z-50 bg-white shadow-md">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <Link href="/" className="flex items-center">
-            <motion.div
-              whileInView={{ rotate: 15 }}
-              className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-              🍦
-            </motion.div>
+             <Image
+                src={gif}
+                alt="Icecream"
+                width={30}
+                height={30}
+                className="object-contain rounded"
+                unoptimized // Required for GIF animations
+              />
             <span className="ml-2 text-2xl font-bold text-pink-600">
               Scoop Happiness
             </span>
