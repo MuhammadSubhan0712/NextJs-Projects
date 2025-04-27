@@ -58,13 +58,22 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto">
             {/* Main Content */}
-
             <motion.h1
-              whileHover={{ scale: 1.02 }}
-              className="text-5xl md:text-7xl font-bold text-pink-600 mb-6">
+              whileHover={{
+                scale: 1.02,
+                backgroundImage:
+                  "linear-gradient(45deg, #ff00cc, #3333ff, #00ff99, #ffcc00)",
+                backgroundClip: "text",
+              }}
+              className="text-5xl md:text-7xl font-bold mb-6"
+              style={{
+                backgroundImage: "linear-gradient(45deg, #ff006e, #ff00ce)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+              }}>
               Scoop Happiness
             </motion.h1>
-
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
