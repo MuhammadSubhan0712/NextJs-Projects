@@ -52,4 +52,6 @@ const IcecreamModel = ({
   );
 };
 
+useGLTF.preload('/models/icecream.glb');
+
 export default IcecreamModel;
