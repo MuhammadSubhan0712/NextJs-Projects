@@ -16,19 +16,19 @@ const featuredFlavors = [
     name: "Velvet Vanilla",
     description: "Creamy Madagascar vanilla with a hint of bourbon",
     color: "bg-amber-300",
-    image: {velvet_vanilla},
+    image: velvet_vanilla,
   },
   {
     name: "Chocolate Euphoria",
     description: "Rich Belgian chocolate with cocoa nibs",
     color: "bg-amber-800",
-    image: {chocolate_euphoria},
+    image: chocolate_euphoria,
   },
   {
     name: "Berry Bliss",
     description: "Mixed berries with a swirl of raspberry coulis",
     color: "bg-pink-400",
-    image: {berry_bliss},
+    image: berry_bliss,
   },
 ];
 

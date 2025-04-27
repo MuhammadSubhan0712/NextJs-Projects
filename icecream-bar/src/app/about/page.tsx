@@ -6,22 +6,22 @@ import Image from "next/image";
 
 const teamMembers = [
   {
-    name: "Sarah Johnson",
+    name: "Muhammad Subhan Khan",
     role: "Founder & Head Chef",
-    bio: "With over 15 years in the culinary world, Sarah brings her passion for flavors to every recipe.",
-    image: "/images/team/sarah.jpg",
+    bio: "With over 15 years in the culinary world, Subhan brings her passion for flavors to every recipe.",
+    image: "/images/msubhan.jpg",
   },
   {
     name: "Michael Chen",
     role: "Flavor Innovator",
     bio: "Michael's creative approach to ingredients results in our most unique and popular flavors.",
-    image: "/images/team/michael.jpg",
+    image: "/images/michael-chen.jpg",
   },
   {
     name: "Emma Rodriguez",
     role: "Customer Happiness",
     bio: "Emma ensures every customer leaves with a smile and a memorable experience.",
-    image: "/images/team/emma.jpg",
+    image: "/images/Emma Rodriguez.jpg",
   },
 ];
 
@@ -138,13 +138,15 @@ const About = () => {
                   viewport={{ once: true }}
                   className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="h-64 bg-gray-200 overflow-hidden">
+                    
                     <Image
                       src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover"
-                      width={100}
-                      height={100}
+                      width={500}
+                      height={500}
                     />
+
                   </div>
 
                   <div className="p-6">
