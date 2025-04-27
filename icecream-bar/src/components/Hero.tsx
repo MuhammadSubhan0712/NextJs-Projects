@@ -95,15 +95,10 @@ const Hero = () => {
               Our Flavors
             </motion.button>
           </motion.div>
-
           </motion.div>
-        </div>
-    
-         
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
+        
+                {/* Scroll indicator */}
+                <motion.div
           animate={{
             y: [0, 10, 0],
             opacity: [0.6, 1, 0.6],
@@ -112,7 +107,7 @@ const Hero = () => {
             repeat: Infinity,
             duration: 2,
           }}
-          className="absolute bottom-[-8]  left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+          className="absolute bottom-8  left-1/2 transform -translate-x-1/2 flex flex-col items-center">
           <span className="text-gray-600 mb-2">Scroll down</span>
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
             <motion.div
@@ -124,7 +119,8 @@ const Hero = () => {
               className="w-1 h-2 bg-gray-400 rounded-full mt-1"
             />
           </div>
-        </motion.div>
+        </motion.div> 
+        </div>
       </section>
     </>
   );
