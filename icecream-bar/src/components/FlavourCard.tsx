@@ -2,12 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { StaticImageData } from "next/image";
 
 interface FlavorCardProps {
   name: string;
   description: string;
   color: string;
-  image: string | HTMLImageElement;
+  image: string | StaticImageData;
   delay?: number;
 }
 

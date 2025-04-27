@@ -6,9 +6,7 @@ import Hero from "@/components/Hero";
 import Image from "next/image";
 import React from "react";
 import ourIcecream from "../../public/images/chocolate-euphoria.jpg";
-import velvet_vanilla from "../../public/images/velvet-vanilla.jpg";
-import chocolate_euphoria from "../../public/images/chocolate-euphoria.jpg";
-import berry_bliss from "../../public/images/berry-bliss.jpg";
+
 
 
 const featuredFlavors = [
@@ -16,19 +14,19 @@ const featuredFlavors = [
     name: "Velvet Vanilla",
     description: "Creamy Madagascar vanilla with a hint of bourbon",
     color: "bg-amber-300",
-    image: velvet_vanilla,
+    image: "/public/images/velvet-vanilla.jpg",
   },
   {
     name: "Chocolate Euphoria",
     description: "Rich Belgian chocolate with cocoa nibs",
     color: "bg-amber-800",
-    image: chocolate_euphoria,
+    image: "/public/images/chocolate-euphoria.jpg",
   },
   {
     name: "Berry Bliss",
     description: "Mixed berries with a swirl of raspberry coulis",
     color: "bg-pink-400",
-    image: berry_bliss,
+    image: "/public/images/berry-bliss.jpg",
   },
 ];
 
@@ -74,8 +72,8 @@ const Home = () => {
                   src={ourIcecream}
                   alt="Our ice cream"
                   className="rounded-xl shadow-lg w-full"
-                  // width={1000}
-                  // height={100}
+                  width={600}
+                  height={500}
                 />
               </motion.div>
 

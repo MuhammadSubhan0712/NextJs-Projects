@@ -69,7 +69,7 @@ const Services = () => {
         <section className="relative h-96 bg-gradient-to-r from-pink-100 to-blue-100 flex items-center justify-center text-center">
           <div className="absolute inset-0 bg-[url('/images/flavors-hero3.jpg')] bg-cover bg-center opacity-50">
             <div className="relative mt-25 z-10 px-4">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 opacity-100">
                 Our Flavors
               </h1>
               <p className="text-xl text-white max-w-2xl mx-auto">

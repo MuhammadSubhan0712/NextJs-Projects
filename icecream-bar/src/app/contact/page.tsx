@@ -34,9 +34,9 @@ const Contact = () => {
       <main>
         {/* Hero */}
         <section className="relative h-96 bg-gradient-to-r from-pink-500 to-yellow-500 flex items-center justify-center text-center">
-          <div className="absolute inset-0 bg-[url('/images/contact.jpg')] bg-cover bg-center opacity-30">
-            <div className="relative z-10 px-4">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <div className="absolute inset-0 bg-[url('/images/contact-us.jpg')] bg-cover bg-center opacity-50">
+            <div className="relative mt-25 z-10 px-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
                 Contact Us
               </h1>
               <p className="text-xl text-white max-w-2xl mx-auto">
