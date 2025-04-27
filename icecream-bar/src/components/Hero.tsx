@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";;
 import IceCreamAnimation from "./IceCreamAnimation";
 import dynamic from "next/dynamic";
 
+
 const IceCreamModel =  dynamic(() => import('./IcecreamModel'), {ssr: false});
 
 
@@ -41,61 +42,64 @@ const Hero = () => {
             <ambientLight intensity={0.5}/>
             <pointLight position={[10, 10, 10]} />
             {inView && <IceCreamModel position={[-2, 0, 0]}/>}
-            
-
+            {inView &&  <IceCreamModel position={[2, 1, -1]}
+            scale={0.8} flavor="chocolate"/>}
+            <Environment preset="city"/>
           </Canvas>
         </div>
  
 
 
         {/* For Animated Background */}
+        <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.2 }}
-          transition={{ duration: 2 }}
-          className="absolute top-0 left-0 w-full h-full bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-10"
-        />
-
-        {/* Main Content */}
-        <div className="container mx-auto h-full flex flex-col justify-center items-center relative z-10 px-4">
-          <motion.h1
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold text-pink-600 mb-6 text-center">
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto"
+        >
+  {/* Main Content */}
+        
+           <motion.h1
+            whileHover={{ scale: 1.02 }}
+            className="text-5xl md:text-7xl font-bold text-pink-600 mb-6">
             Scoop Happiness
           </motion.h1>
 
           <motion.p
-            initial={{ y: 50, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-700 mb-4 max-w-2xl text-center">
+            transition={{ duration: 0.2, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-700 mb-8">
             Artisanal ice cream crafted with love and the finest ingredients
           </motion.p>
-
           {/* Custom ice cream animation Component */}
-          <IceCreamAnimation />
-
+          {/* <IceCreamAnimation /> */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 mt-8">
+            className="flex flex-col sm:flex-row gap-4 justify-center">
+            
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, boxShadow: "0 8px 25px rgba(236, 72, 153, 0.3)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg mt-8">
+              className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-10 rounded-full shadow-xl">
               Order Now
             </motion.button>
 
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, boxShadow: "0 8px 25px rgba(255, 255, 255, 0.3)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white hover:bg-gray-100 text-pink-600 font-bold py-3 px-8 rounded-full shadow-lg mt-8 border border-pink-200">
+              className="bg-white hover:bg-gray-50 text-pink-600 font-bold py-4 px-10 rounded-full shadow-xl border border-pink-200">
               Our Flavors
             </motion.button>
           </motion.div>
+
+          </motion.div>
+        </div>
+    
+         
         </div>
 
         {/* Scroll indicator */}
