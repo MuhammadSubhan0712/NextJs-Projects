@@ -2,12 +2,51 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, useGLTF, Environment }  from "@react-three/drei";
+import { useInView } from "react-intersection-observer";;
 import IceCreamAnimation from "./IceCreamAnimation";
+import dynamic from "next/dynamic";
+
+const IceCreamModel =  dynamic(() => import('./IcecreamModel'), {ssr: false});
+
 
 const Hero = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: false
+  });
+
   return (
     <>
-      <section className="relative py-20 bg-gradient-to-b from-pink-50 to-blue-50 overflow-hidden">
+      <section
+      ref={ref} 
+      className="relative py-20 bg-gradient-to-b from-pink-50 to-blue-50 overflow-hidden">
+
+        {/* Video hd Background */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <video 
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-20">
+           <source src="videos/ice-cream-background.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Floating 3D Icecream models */}
+        <div className="absolute inset-0 z-10 pointer-events-none">
+          <Canvas camera={{ position: [0, 0, 5], fov :45 }}>
+            <ambientLight intensity={0.5}/>
+            <pointLight position={[10, 10, 10]} />
+            {inView}
+
+          </Canvas>
+        </div>
+ 
+
+
         {/* For Animated Background */}
         <motion.div
           initial={{ opacity: 0 }}
