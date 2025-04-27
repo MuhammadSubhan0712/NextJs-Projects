@@ -14,16 +14,32 @@ const IcecreamModel = ({ position = [0, 0, 0], scale = 1, flavor = "vanilla" }) 
     const { actions } = useAnimation(animations, group);
 
 
-    // Animation Loop
+    // Animation Loop:
     useFrame((state) => {
         if (group.current) {
             group.current.rotation.y += 0.005;
             group.current.position.y = Math.sin(state.clock.getElapsedTime() * 0.2);
         }
-    })
-  
+    });
+
+    // Set material based on flavor:
+    let materialColor;
+    switch(flavor){
+    case 'chocolate':
+        materialColor = '#5c4033';
+        break;
+    case 'strawberry':
+        materialColor = '#ff6b8b';
+        break;
+    default: //Vanilla
+        materialColor = '#f3e5ab';
+        break;
+    }
+
   return (
-    <div>IcecreamModel</div>
+    <>
+    
+    </>
   )
 }
 
