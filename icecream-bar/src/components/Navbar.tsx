@@ -7,10 +7,6 @@ import { X, Menu } from "lucide-react";
 import Image from "next/image";
 import gif from "../../public/images/navbar.gif";
 
-interface NavItems {
-  name: string;
-  path: string;
-}
 
 const Navbar = () => {
   const navItems = [
@@ -37,7 +33,7 @@ const Navbar = () => {
                 width={30}
                 height={30}
                 className="object-contain rounded"
-                unoptimized // Required for GIF animations
+                unoptimized 
               />
             <span className="ml-2 text-2xl font-bold text-pink-600">
               Scoop Happiness
@@ -48,14 +44,14 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-6">
           {navItems.map((item) => (
             <Link
-              key={item.path}
-              href={item.path}
+              key={item && item.path}
+              href={item && item.path}
               className="relative text-gray-700 hover:text-pink-600 transition-colors"
             >
                 <motion.span
                   whileHover={{ scale: 1.1 }}
                   className="block py-2 px-1">
-                  {item.name}
+                  {item && item.name}
                 </motion.span>
 
                 <motion.div
@@ -84,14 +80,14 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white">
-            <div className="container mx-auto px-4 py-2 flex flex-col">
+            <div className="container mx-auto px-4 py-2 flex flex-col items-center">
               {navItems.map((item) => (
                 <Link
-                  key={item.path}
-                  href={item.href}
+                  key={item && item.path}
+                  href={item && item.path}
                   className="py-3 px-2 text-gray-700 hover:text-pink-600 border-b border-gray-100"
                   onClick={() => setIsOpen(false)}>
-                  {item.name}
+                  {item && item.name}
                 </Link>
               ))}
             </div>

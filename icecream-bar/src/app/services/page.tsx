@@ -36,7 +36,7 @@ const allFlavors = [
   {
     name: "Cookies & Cream",
     description: "Vanilla ice cream packed with chocolate cookies",
-    color: "bg-gray-400",
+    color: "bg-yellow-800",
     image: "/images/cookies&cream.jpg",
   },
 ];
@@ -87,15 +87,12 @@ const Services = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-auto h-full">
               {allFlavors.map((flavor, index) => (
-                <FlavourCard
-                  key={flavor.name}
-                  name={flavor.name}
-                  description={flavor.description}
-                  color={flavor.color}
-                  image={flavor.image}
-                  delay={index * 0.1}
-                />
-              ))}
+               <div
+               key={flavor.name}>
+               <p className="text-center text-xl text-pink-800">{flavor.name}</p>
+               <FlavourCard {...flavor} />
+             </div>
+             ))}
             </div>
           </div>
         </section>
@@ -108,14 +105,11 @@ const Services = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
               {seasonalFlavors.map((flavor, index) => (
-                <FlavourCard
-                  key={flavor.name}
-                  name={flavor.name}
-                  description={flavor.description}
-                  color={flavor.color}
-                  image={flavor.image}
-                  delay={index * 0.1}
-                />
+                 <div
+                 key={flavor.name}>
+                 <p className="text-center text-xl text-pink-800">{flavor.name}</p>
+                 <FlavourCard {...flavor} />
+               </div>
               ))}
             </div>
           </div>
