@@ -28,8 +28,7 @@ const Hero = () => {
           </video>
         </div>
 
-    
-
+  
         {/* For Animated Background */}
         <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
           <motion.div
