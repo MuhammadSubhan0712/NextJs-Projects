@@ -14,7 +14,7 @@ const IceCreamAnimation = () => {
 
   return (
     <>
-      <div className="relative w-full h-64">
+      <div className="relative bg-gradient-to-b from-gray-700 to-blue-100 w-full h-64">
         {flavors.map((flavor, index) => (
           <motion.div
             key={index}
@@ -38,7 +38,7 @@ const IceCreamAnimation = () => {
                 delay: flavor.delay * 0.5,
               },
             }}
-            className={`absolute w-12 h-20 md:w-16 md:h-24 rounded-full ${flavor.color} ice-cream-scoop`}
+            className={`absolute w-12 h-20 md:w-16 md:h-24 rounded-full ${flavor.colors} ice-cream-scoop`}
             style={{
               top: flavor.top,
               left: flavor.left,

@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import IceCreamAnimation from "@/components/IceCreamAnimation";
 
 const teamMembers = [
   {
@@ -29,8 +30,8 @@ const About = () => {
   return (
     <>
       <main>
-        <section className="relative h-96 bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center text-center">
-          <div className="absolute inset-0 bg-[url('/images/about.jpg')] bg-cover bg-center opacity-30" />
+        <section className="relative h-100 bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center text-center mb-[-10]">
+          <div className="absolute inset-0 bg-[url('/images/about-us.jpg')] bg-cover bg-center opacity-50" />
           <div className="relative z-10 px-4">
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
@@ -50,6 +51,7 @@ const About = () => {
           </div>
         </section>
 
+        <IceCreamAnimation/>
         {/* Story Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">

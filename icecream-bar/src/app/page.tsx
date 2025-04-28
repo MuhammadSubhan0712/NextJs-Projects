@@ -17,19 +17,19 @@ const featuredFlavors = [
     name: "Velvet Vanilla",
     description: "Creamy Madagascar vanilla with a hint of bourbon",
     color: "bg-amber-300",
-    image: "/public/images/velvet-vanilla.jpg",
+    image: "/images/velvet-vanilla.jpg",
   },
   {
     name: "Chocolate Euphoria",
     description: "Rich Belgian chocolate with cocoa nibs",
     color: "bg-amber-800",
-    image: "/public/images/chocolate-euphoria.jpg",
+    image: "/images/chocolate-euphoria.jpg",
   },
   {
     name: "Berry Bliss",
     description: "Mixed berries with a swirl of raspberry coulis",
     color: "bg-pink-400",
-    image: "/public/images/berry-bliss.jpg",
+    image: "/images/berry-bliss.jpg",
   },
 ];
 
@@ -66,6 +66,7 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true, margin: "0px 0px -100px 0px" }}>
+                  <p className="text-center text-xl text-pink-800">{flavor.name}</p>
                   <FlavourCard {...flavor} />
                 </motion.div>
               ))}

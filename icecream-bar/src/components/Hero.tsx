@@ -2,13 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
 import { useInView } from "react-intersection-observer";
-import IceCreamAnimation from "./IceCreamAnimation";
-import dynamic from "next/dynamic";
 
-// const IceCreamModel = dynamic(() => import("./IcecreamModel"), { ssr: false });
 
 const Hero = () => {
   const [ref, inView] = useInView({
@@ -33,22 +28,7 @@ const Hero = () => {
           </video>
         </div>
 
-        {/* Floating 3D Icecream models */}
-        {/* <div className="absolute inset-0 z-10 pointer-events-none">
-          <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} />
-            {inView && <IceCreamModel position={[-2, 0, 0]} />}
-            {inView && (
-              <IceCreamModel
-                position={[2, 1, -1]}
-                scale={0.8}
-                flavor="chocolate"
-              />
-            )}
-            <Environment preset="city" />
-          </Canvas>
-        </div> */}
+    
 
         {/* For Animated Background */}
         <div className="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">

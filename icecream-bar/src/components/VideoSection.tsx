@@ -27,7 +27,7 @@ const VideoSection = () => {
             muted
             playsInline
             className="w-full h-full object-cover">
-            <source src="/videos/icecream-parallax.mp4" type="video/mp4" />
+            <source src="/videos/ingredients.mp4" type="video/mp4" />
           </video>
         </div>
 
