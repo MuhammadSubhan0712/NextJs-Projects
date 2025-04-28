@@ -45,7 +45,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <Link
               key={item && item.path}
-              href={item && item.path}
+              href={item && item.path || "default-path"}
               className="relative text-gray-700 hover:text-pink-600 transition-colors"
             >
                 <motion.span
@@ -84,7 +84,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <Link
                   key={item && item.path}
-                  href={item && item.path}
+                  href={item && item.path || "default-path"}
                   className="py-3 px-2 text-gray-700 hover:text-pink-600 border-b border-gray-100"
                   onClick={() => setIsOpen(false)}>
                   {item && item.name}

@@ -8,7 +8,7 @@ interface FlavorCardProps {
   name: string;
   description: string;
   color: string;
-  image: string | StaticImageData;
+  image:  string | Blob | undefined;
   delay?: number;
 }
 

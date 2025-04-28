@@ -86,7 +86,7 @@ const Services = () => {
               Classic Flavors
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-auto h-full">
-              {allFlavors.map((flavor, index) => (
+              {allFlavors.map((flavor) => (
                <div
                key={flavor.name}>
                <p className="text-center text-xl text-pink-800">{flavor.name}</p>
@@ -104,7 +104,7 @@ const Services = () => {
               Seasonal Specials
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
-              {seasonalFlavors.map((flavor, index) => (
+              {seasonalFlavors.map((flavor) => (
                  <div
                  key={flavor.name}>
                  <p className="text-center text-xl text-pink-800">{flavor.name}</p>
