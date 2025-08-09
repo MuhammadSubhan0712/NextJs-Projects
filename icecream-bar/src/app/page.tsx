@@ -93,6 +93,7 @@ const Home = () => {
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     className="w-full h-auto rounded-2xl">
                     <source src="/videos/handcrafted.mp4" />
                   </video>

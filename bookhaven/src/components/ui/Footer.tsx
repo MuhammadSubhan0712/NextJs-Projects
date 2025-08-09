@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
 
           <div className="mt-12 pt-8 border-t text-sm text-muted-foreground text-center">
-            &copy; {new Date().getFullYear()} BookHaven. All rights reserved
+            &copy; {new Date().getFullYear()} BookHaven by<abbr className="text-transparent bg-clip-text bg-gradient-to-t from-gray-100 via-gray-950 to-gray-100 font-extrabold" title="Muhammad Subhan Khan"> M$k</abbr> All rights reserved
           </div>
         </div>
       </footer>
